@@ -18,13 +18,13 @@ import java.io.IOException;
 @SpringBootTest
 public class ApiServiceTest {
 
-    @Value("${chatbot-api.userId}")
+    @Value("${chatbot-api.task1.userId}")
     private String userId;
 
-    @Value("${chatbot-api.cookie}")
+    @Value("${chatbot-api.task1.cookie}")
     private String cookie;
 
-    @Value("${chatbot-api.apiKey}")
+    @Value("${chatbot-api.task1.apiKey}")
     private String apiKey;
 
     @Test
@@ -46,7 +46,7 @@ public class ApiServiceTest {
     @Test
     public void testOpenAiService() throws IOException {
         // System.out.println("aiService.getApiKey() = " + aiService.getApiKey());
-        OpenAiResp aiResp = aiService.getAnswer("用java语言实现字符串逆转");
+        OpenAiResp aiResp = aiService.getAnswer(apiKey, "用java语言实现字符串逆转");
         for (Choice choice : aiResp.getChoices()) {
             System.out.println("choice.getText() = " + choice.getText());
         }
