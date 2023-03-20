@@ -3,6 +3,7 @@ package com.chatbot.domain.openai.service;
 import com.alibaba.fastjson.JSON;
 import com.chatbot.domain.openai.IOpenAiService;
 import com.chatbot.domain.openai.model.resp.OpenAiResp;
+import com.chatbot.domain.openai.model.vo.Choice;
 import org.apache.http.HttpHost;
 import org.apache.http.HttpStatus;
 import org.apache.http.client.config.RequestConfig;
@@ -18,6 +19,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
+import java.util.Arrays;
 
 @Service
 public class OpenAiService implements IOpenAiService {
@@ -56,5 +58,14 @@ public class OpenAiService implements IOpenAiService {
                 throw new RuntimeException("获取回答失败，" + response.getStatusLine().getStatusCode());
             }
         }
+    }
+
+    @Override
+    public OpenAiResp getMockAnswer(String question) {
+        OpenAiResp openAiResp = new OpenAiResp();
+        Choice choice = new Choice();
+        choice.setText(question);
+        openAiResp.setChoices(Arrays.asList(choice));
+        return openAiResp;
     }
 }

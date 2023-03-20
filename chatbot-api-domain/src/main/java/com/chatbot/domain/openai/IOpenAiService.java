@@ -6,4 +6,6 @@ import java.io.IOException;
 
 public interface IOpenAiService {
     OpenAiResp getAnswer(String apiKey, String question) throws IOException;
+
+    OpenAiResp getMockAnswer(String question);
 }

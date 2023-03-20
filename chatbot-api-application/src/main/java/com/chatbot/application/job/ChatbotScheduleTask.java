@@ -50,7 +50,8 @@ public class ChatbotScheduleTask implements Runnable {
             SubjectsRsp resp = zsxqApi.getSubjectsRepByUserId(userId, cookie);
             for (Topics topic : resp.getRespData().getTopics()) {
                 if (topic.getCommentsCount() == 0) {
-                    OpenAiResp aiResp = aiService.getAnswer(apiKey, topic.getTalk().getText());
+                    // OpenAiResp aiResp = aiService.getAnswer(apiKey, topic.getTalk().getText());
+                    OpenAiResp aiResp = aiService.getMockAnswer(topic.getTalk().getText());
                     String answer = aiResp.getChoices().get(0).getText();
                     zsxqApi.addCommentByTopicId(topic.getTopicId(), cookie, answer);
                     logger.info("AI回答了\"{}\"问题，答复为: {}", topic.getTalk().getText(), answer);
