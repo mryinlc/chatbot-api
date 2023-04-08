@@ -4,4 +4,4 @@ server:
 chatbot-api:
   userId: 585224458218844
   cookie: zsxq_access_token=98160735-042C-0237-A5D9-77C5EC19706F_09E5A49BEBAB77AD; abtest_env=product; sensorsdata2015jssdkcross={"distinct_id":"585224458218844","first_id":"186ef88ee7d48b-08bed2d70dd6-7a545475-2073600-186ef88ee7e1424","props":{},"identities":"eyIkaWRlbnRpdHlfY29va2llX2lkIjoiMTg2ZWY4OGVlN2Q0OGItMDhiZWQyZDcwZGQ2LTdhNTQ1NDc1LTIwNzM2MDAtMTg2ZWY4OGVlN2UxNDI0IiwiJGlkZW50aXR5X2xvZ2luX2lkIjoiNTg1MjI0NDU4MjE4ODQ0In0=","history_login_id":{"name":"$identity_login_id","value":"585224458218844"},"$device_id":"186ef88ee7d48b-08bed2d70dd6-7a545475-2073600-186ef88ee7e1424"}; UM_distinctid=186ef8e10b9a3f-034dc0e7923262-7a545475-1fa400-186ef8e10ba13b6; zsxqsessionid=c6dc122a9a9bded3a938fbbd07381634
-  apiKey: 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
+  apiKey: openAi key
